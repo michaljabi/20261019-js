@@ -45,6 +45,24 @@ const myPoint = {
 	z: 1
 }
 
+const myPoin2 = {
+	x: 10,
+	y: 1,
+	z: 1
+}
+
+console.log(myPoint.x + myPoin2.x)
+
+
+
+
+
+
+
+
+
+
+
 myPoint.z = 10;
 myPoint.dimention = '3d';
 
