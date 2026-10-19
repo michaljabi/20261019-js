@@ -40,5 +40,7 @@ console.log('Hello !')
 console.log('Hello 1!')
 console.log('Hello 2!')
 
+'test sting'.substring(3)
+
 // Zadanie:
 // pokaż na ekranie liczbę: 1920

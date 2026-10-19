@@ -23,18 +23,28 @@ function sumTwoNumbers(a, b) {
 const result = sumTwoNumbers(10, 20)
 
 
+
 // #1 Zadanie:
 // Pokaż wynik dodawania 10 + 20 na ekranie
+console.log(result)
 
 
 // #2 Zadanie:
 // Policz ile to 30 + 560
+console.log(sumTwoNumbers(30, 560))
 
+const result2 = sumTwoNumbers(30, 560);
+console.log(result2);
 
 // #3 Zadanie:
 // co jeśli byśmy mieli policzyć 450 + 200 + 100 ?
+const partial = sumTwoNumbers(450, 200);
+const final = sumTwoNumbers(partial, 100);
 
+console.log(final);
 
+// Dla interpretera te "stałe pomocnicze" nie mają znaczenia:
+console.log(sumTwoNumbers(sumTwoNumbers(450, 200), 100))
 
 /* ---------------------- */
 // Funkcje po 2015 roku mogą posiadać parametry domyślne:
