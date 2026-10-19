@@ -1,6 +1,6 @@
-var welcomeMessage = 'Hello World!'
+var _$welcome6Message = 'Hello World!'
 
-console.log(welcomeMessage);
+console.log(_$welcome6Message);
 
 // to jest prosty komentarz liniowy
 
