@@ -26,6 +26,10 @@ console.log(1 + x ** y)
 var hello = "Hello";
 const almostWorld = 'Almost World';
 
+console.log(almostWorld.charAt(0))
+console.log(almostWorld.charAt(1))
+console.log(almostWorld.charAt(2))
+
 // #3 Zadanie:
 /*
 	Pokaż wynik dodawania hello + almostWorld
@@ -33,11 +37,23 @@ const almostWorld = 'Almost World';
     użyj odpowiedniej metody wbudowanej na stałej almostWorld (!)
 */
 
+console.log(hello + almostWorld)
+console.log(hello + almostWorld.slice(-6));
+console.log(hello + ' ' + almostWorld.slice(-5));
+console.log(`${hello} ${almostWorld.slice(-5)}`);
+
+console.log(`${hello} ${almostWorld.slice(-5)}`);
+
+console.log(hello, almostWorld.slice(-5));
+console.log(hello + almostWorld.slice(6));
+
+console.log(hello + almostWorld.substring(6));
+
 
 //------------------------------------------------------------
-const isAnAdmin = true;
+let isAnAdmin = true;
 console.log(isAnAdmin)
-// isAnAdmin = false;
+isAnAdmin = false;
 console.log(isAnAdmin)
 
 // #4 Zadanie

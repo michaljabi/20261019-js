@@ -38,9 +38,10 @@ console.log(myString.substring(3));
 console.log(myString.toUpperCase());
 console.log(myString.toLowerCase());
 console.log(myString.charAt(4));
-console.log('Hello World'.charAt(6));
+console.log('Hello World'.charAt(7));
 console.log('Hello World'.slice(-5));
-console.log('Ha'.repeat(10));
+console.log(myString.slice(-5));
+console.log('Ha'.repeat(3));
 console.log(String.fromCharCode(65));
 // więcej: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
