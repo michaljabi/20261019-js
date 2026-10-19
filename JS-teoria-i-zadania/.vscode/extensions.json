@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "achil.vscode-javascript-repl",
+    "ritwickdey.LiveServer",
+    "pkief.material-icon-theme",
+    "christian-kohler.path-intellisense",
+    "WallabyJs.quokka-vscode",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "johnpapa.vscode-peacock"
+  ]
+}
