@@ -35,7 +35,10 @@ console.log('  ------------')
 }
 // }
 
-printTheBox()
-printTheBox()
-printTheBox()
-printTheBox()
+// printTheBox()
+// wywołaj za 3 sekundy
+setTimeout(printTheBox, 3000);
+console.log('END');
+// printTheBox()
+// printTheBox()
+// printTheBox()
