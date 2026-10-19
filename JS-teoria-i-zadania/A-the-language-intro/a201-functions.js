@@ -14,16 +14,28 @@
 // Deklaracja:
 function sayHello() {
 	console.log('Witaj!')
+	console.log('!')
 }
 
 // Wywołanie:
 sayHello()
+sayHello()
+
 
 
 // #1 Zadanie:
 // Jak szybko powtórzyć te zapisy 4 razy na ekranie:
 // chcemy widzieć 4 pudełka jedno pod drugim
 
+// for(let x = 0; x < 4; x++) {
+function printTheBox() {
 console.log('  ____________')
 console.log('|  in the box  |')
 console.log('  ------------')
+}
+// }
+
+printTheBox()
+printTheBox()
+printTheBox()
+printTheBox()
