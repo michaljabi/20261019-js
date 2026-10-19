@@ -1,3 +1,5 @@
+// //@ts-check
+
 /**
  *  Funkcje mogą być deklarowane z tzw. parametrami.
  *  Są to zapisy odnoszące się do argumentów (danych) przekazanych do funkcji.
@@ -14,19 +16,48 @@
  *  natomiast przesyłane dane "10" i "20" nazywamy argumentami
  */
 
+// zakres w JS to tzw. SCOPE (patrz: a301)
+
+// zakres zewnętrzny
 // Deklaracja:
+/** 
+ * // https://jsdoc.app/tags-param
+ * @param {number} a 
+ * @param {number} b 
+*/
 function sumTwoNumbers(a, b) {
-	return a + b
+	console.log(a);
+	console.log(b);
+	// zakres funkcji
+	if(typeof a !== 'number' || typeof b !== 'number') {
+		// zakres wewnętrzny
+		throw new Error('a and b must be a numbers !')
+		// return 'You must provide a number'
+		// return 0;
+	}
+	// if(a < 0) {
+		// zakres wewnętrzny
+		// return 0;
+	// }
+	return a + b;
+	//return a + b
+	//return a + b
 }
 
 // Wywołanie:
-const result = sumTwoNumbers(10, 20)
+try {
+	// const result = sumTwoNumbers('x', '2');
+	const result = sumTwoNumbers(10, 20);
+	// #1 Zadanie:
+	// Pokaż wynik dodawania 10 + 20 na ekranie
+	console.log(result)
+} catch (e) {
+	console.log(e.message);
+}
 
 
 
-// #1 Zadanie:
-// Pokaż wynik dodawania 10 + 20 na ekranie
-console.log(result)
+
 
 
 // #2 Zadanie:
