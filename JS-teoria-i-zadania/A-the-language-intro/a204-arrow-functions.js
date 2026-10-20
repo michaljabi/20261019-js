@@ -39,7 +39,7 @@ console.log(newFunc3('Michał'))
 
 setTimeout(() => {
     console.log(newFunc('Michał'), 'END');
-}, 5000)
+}, 50)
 
 // Przypomnienie:
 // Funkcja może zwracać inną funkcję:
@@ -50,8 +50,10 @@ function hello() {
 const innerFn = hello();
 // #2 Zadanie:
 // Jak wyciągnąć wynik "World" ?
+console.log(innerFn())
 
-
+// Dla intepretera nie ma znaczenia czy mamy pomocniczą referencję
+console.log(hello()())
 
 
 
