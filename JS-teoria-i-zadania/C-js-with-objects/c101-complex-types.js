@@ -50,8 +50,34 @@ console.log(myUser['name'])
 // Przypisz nowy obiekt do stałej - sprawdź i udowodnij że:
 	// a) Nie można mieć kilka tak samo nazwanych pól w obiekcie
 	// b) Jeśli wystąpi taka sytuacja to "wartość ostatniego pola wygrywa"
+const myObj = {
+	text: '?',
+	text: '!',
+	text: 'x',
+	num: 82937,
+	age: 23,
+	address: { street: 'Zielona 23a'}
+}
 
+console.log(myObj)
+console.log(myObj.hello)
 
+// Shallow Copy ... - to tzw. Spread operator:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+// const myObjCopy = { text: 'ok', ...myObj } // przekopiowuje wartości i pola z obiektu a do obiektu b
+const myObjCopy = { ...myObj, text: 'ok' } // przekopiowuje wartości i pola z obiektu a do obiektu b
+
+console.log(myObj === myObjCopy);
+console.log(myObjCopy);
+
+// Dlatego shallow:
+console.log(myObj.address === myObjCopy.address);
+console.log(myObj)
+console.log(myObjCopy)
+
+// Depp COPY - tzw. CLONE:
+const cloneObj = structuredClone(myObj);
+console.log(myObj.address === cloneObj.address);
 
 // Poza dynamicznym zapisem, można "dostać się" do wszystkich pól obiektu - dzięki pętli for...in
 for(let key in myUser) {
@@ -64,14 +90,36 @@ const tree = {
 	branch: {
 		leaf: 'green',
 		isRoot: false
-	}
+	},
+	// address: '' // teoretyczne pole - które chcemy uzupełnić później
 }
+
+// tego też nie chcemy robić ! :(
+console.HELLO = '234'
+
+console.log(console)
+
+// co to jest tzw. mutacja obiektu
+// dodajemy pole które wcześniej nie istniało (podczas deklaracji)
+tree.address = 'Leśnicza 4'
+// czyli DYNAMICZNIE dodaliśmy nowe - nieistinejące wcześniej pole obiektu
+
+console.log(tree);
 
 console.log(tree.branch.leaf)
 
 // #3 Zadanie:
 // Pokaż na konsoli wartość isRoot w obiekcie tree:
+console.log(tree.branch.isRoot);
 
+// nieistnijące pole
+// To jest błąd
+// console.log(tree.roof.sattelite);
+// To tak samo jakbyśmy chcieli - dosłownie zrobić:
+// console.log(undefined.sattelite);
+
+// Sposób na bezpieczne dostanie się do DOWOLNEGO zagnieżdzenia:
+console.log(tree?.roof?.sattelite);
 
 /**
  * W odróżnieniu od typów prostych (primitives).
