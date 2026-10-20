@@ -7,6 +7,15 @@
         .red-text {
             color: lightcoral;
         }
+        #heading {
+            font-size: 60px;
+        }
+        h1 {
+            background-color: aquamarine;
+        }
+        [title] {
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
@@ -14,12 +23,60 @@
     <div class="description">
         czy to na prawdę ty?...
     </div>
+      <div class="description">
+        czy to na prawdę ty?...
+    </div>
+      <div class="description">
+        czy to na prawdę ty?...
+    </div>
+ 
+    <!-- klasycznie działający skrypt -->
+    <script> 
+        // to teraz jest widoczne dla innego skryptu!
+        const MY_SCREN = 'landscape'
+    </script> 
+
+    <!-- skrypt hermetyczny -->
+    <script type="module">
+        // type=module to tzw. ESM -> Ecma Script Modules
+        // w przyszłości: `import` - składnia - do pokazania.
+        const TEST = 'hello'
+    </script>
 
     <script>
-        const $h1 = document.getElementById('heading');
-         // $h1.classList.add('red-text')
+        console.log(MY_SCREN);
+
+        try {
+            console.log(TEST);
+        } catch {}
+
+        const $h1 = document.querySelector('#heading');
+        $h1.addEventListener('mouseover', () => {
+            //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+            $h1.classList.add('red-text')
+        })
+        $h1.addEventListener('mouseout', () => {
+            $h1.classList.remove('red-text')
+        })
+        
+        // $h1.classList.add('red-text2')
+        // $h1.classList.add('red-text3')
+      
         const $desc = document.querySelector('.description')
-         // $desc.setAttribute('title', 'Tak to ja 😎')
+        if($desc !== null) { // można prościej (ale za chwilę)
+           $desc.setAttribute('title', 'Tak to ja 😎')
+        }
+
+        const $allDesc = document.querySelectorAll('.description');
+        // console.log($allDesc)
+        $allDesc.forEach((e) => {
+            e.setAttribute('title', 'Tak to ja 😎')
+        })
+
+        // let MY_SCREN = 'portrait'; 
+
+        conosle.log('Hello <strong>World</strong>')
     </script>
+    
 </body>
 </html>
