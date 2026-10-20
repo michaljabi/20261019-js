@@ -6,6 +6,7 @@
 </head>
 <body>
     <div></div>
+    <input id="newAnimal" value="koala" />
     <script>
         /**
          * Praktycznie można "namalować" na DOM wszystko co chccemy używając JavaScript
@@ -13,20 +14,43 @@
          * Dla przykładu, możesz pokazać listę elementów <li> bazując na liście (Array) stringów:
          * */
 
+        const input = document.querySelector('#newAnimal')
+        input.addEventListener('keyup', (event) => {
+            console.log(event.key)
+            if(event.key === 'Enter' && input.value.length > 0) {
+                ul.appendChild(makeLi(input.value))
+                input.value = '';
+            }
+        })
+
+        console.log(input.value)
+
          // Array stringów:
-         const animalList = ['parrot', 'cat', 'snake', 'dog'];
+         const animalList = ['parrot', 'cat', 'snake', 'dog', 'pidgeon', 'frog'];
+
+         setTimeout(() => {
+            ul.appendChild(makeLi('frog2'))
+         }, 2000)
 
          // Tworzymy element bazowy: (<ul>)
          const ul = document.createElement('ul');
+         ul.style.backgroundColor = '#0000ff'
+         ul.style.margin = '2px'
+
+         function makeLi(text = '') {
+            const li = document.createElement('li');
+             // wpisujemy do niego tekst
+             li.innerText = text;
+             li.style.color = 'white' 
+             return li;   
+         }
 
          // Iterujemy (przechodzimy, wyliczamy) po całej tablicy wyciągając string po stringu
          for(const animal of animalList) {
-             // dla każdej iteracji tworzymy element (<li>)
-             const li = document.createElement('li');
-             // wpisujemy do niego tekst
-             li.innerText = animal;
-             // dołączamy do <ul> do którego mamy referencję ul
-             ul.appendChild(li)
+             console.dir(makeLi(animal))
+             // https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+             // https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend
+             ul.prepend(makeLi(animal))
          }
 
          // Łapiemy selektor do <div> istniejącego na dokumencie (DOM)
@@ -34,7 +58,7 @@
 
          // Dołączamy <ul> z wszystkimi elementami do <div>
          // bez tej linijki poniżej, mamy wszystko gotowe ale nie zobaczymy tego na dokumencie (na DOM)
-         rootDiv.appendChild(ul);
+          rootDiv.appendChild(ul);
          // dzieje się tak dlatego, że obiekty są już w pamięci - ale po stronie JS! Aby były dołączone do DOM,
          // zawsze musimy je "przyczepić" do istniejącego elementu.
 
