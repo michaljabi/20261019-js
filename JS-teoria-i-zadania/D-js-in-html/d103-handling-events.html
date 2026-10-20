@@ -36,13 +36,12 @@
         	console.log('I said - do not click me !')
         })
 
-        let count = 1;
+        let count = 1120;
         const $btnCounter = document.querySelector('#counter');
         $btnCounter.addEventListener('click', () => {
-            count++;
-            //console.log(count);
-            $btnCounter.textContent = count;
+            $btnCounter.textContent = ++count;
         })
+        $btnCounter.textContent = count;
 
         // console.log($btnCounter.textContent)
     </script>
