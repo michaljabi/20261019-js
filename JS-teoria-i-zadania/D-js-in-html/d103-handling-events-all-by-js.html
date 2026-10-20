@@ -34,17 +34,40 @@
         const TEXT1 = 'Don\'t click me!';
         const TEXT2 = 'Or should you click?';
 
+        // console.log()
+        // Michał z przyszłości (jutro)
+        //let x = Number(localStorage.getItem('x')) || 0;
+        // teraz:
+        let x = 1;
+
         btn1.addEventListener('click', () => {
-            if(btn2.innerText === TEXT1) {
-                btn2.innerText = TEXT2;
+            // console.log('Gdzie ja jestem?')
+            // console.log('?')
+            // console.warn('JESTEM')
+            // console.error('UWAGA')
+            // debugger;
+            // x++;
+            console.log(x++);
+            //localStorage.setItem('x', x)
+
+            if(btn1.innerText === TEXT1) {
+                const x = 200;
+                btn1.innerText = TEXT2;
             } else {
-                btn2.innerText = TEXT1
+                btn1.innerText = TEXT1
             }
         })
 
-        btn2.addEventListener('click', () => {
+
+        // Callback (umowna nazwa) funkcji która jest przyjmowana
+        // przez inną metodę lub funkcję
+        const myEventClickRef = () => {
             alert('I said - do not click me !')
-        })
+        };
+        btn2.addEventListener('click', myEventClickRef)
+
+
+        //pod spodem, w momencie CLIK zrobi myEventClickRef()
     </script>
 </body>
 </html>

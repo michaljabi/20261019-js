@@ -21,6 +21,25 @@ const newFunc2 = name => `Hello ${name}!`;
 const newFunc3 = ( name ) => {
     return `Hello ${name}!`;
 };
+// Wyrażenie funkcyjne (eng. Function Expression)
+const func = function(name) { 
+    return `Hello ${name}!` 
+}
+// Deklaracja funkcji (eng. Function Declaration)
+function funcD(name) { 
+    return `Hello ${name}!` 
+}
+console.log(func('Michał'))
+console.log(funcD('Michał'))
+
+console.log(newFunc('Michał'))
+console.log(newFunc2('Michał'))
+console.log(newFunc3('Michał'))
+
+
+setTimeout(() => {
+    console.log(newFunc('Michał'), 'END');
+}, 5000)
 
 // Przypomnienie:
 // Funkcja może zwracać inną funkcję:
