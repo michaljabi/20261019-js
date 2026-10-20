@@ -25,7 +25,7 @@
         <button id="clicker"> Don't click me! </button>
     </div>
      <div>
-        <button id="counter"> 1 </button>
+        <button id="counter"></button>
     </div>
     <script>
         function fireOK() {
@@ -36,11 +36,12 @@
         	console.log('I said - do not click me !')
         })
 
-        let count = 1120;
+        let count = 10;
         const $btnCounter = document.querySelector('#counter');
         $btnCounter.addEventListener('click', () => {
             $btnCounter.textContent = ++count;
         })
+        // Ustawienie wartości początkowej na `count`
         $btnCounter.textContent = count;
 
         // console.log($btnCounter.textContent)
