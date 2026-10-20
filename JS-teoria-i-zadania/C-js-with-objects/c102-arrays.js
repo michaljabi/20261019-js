@@ -15,6 +15,10 @@
 // Przykład tablicy:
 const mutableArray = [ 'a', 'b', 'c', 'd' ];
 
+// literał Obiektowy to: {} i teraz, {}, to tak jakbym napisał tak: new Object();
+
+// A tutaj wyżej to tzw. literał tablicowy: [] i teraz, []. to tak jakbym napisał tak: new Array();
+
 // Sprawdzenie długości tablicy
 console.log(mutableArray.length);
 
@@ -26,17 +30,25 @@ mutableArray[2] = 'x'
 
 // Jest to kolekcja po której można iterować
 // Za równo pętlą for
-for(let x = 0; x < mutableArray.length; x++) {
+for(let x = mutableArray.length -1; x >= 0; x--) {
 	// wtedy odnosimy się do index'ów tablicy:
+	if(x === 2) {
+		continue; // nie idź dalej, ale kontynuj pętlę
+		//break; // zakończ działanie pętli
+	}
 	console.log(mutableArray[x]);
 }
 // jak i składnią pętli "for of"
-for(let element of mutableArray) {
+for(const element of mutableArray) {
 	console.log(element);
 }
 // jak i wbudowaną metodą forEach
 mutableArray.forEach(function ( element ) {
 	console.log(element)
+})
+
+mutableArray.forEach(( element ) => {
+	console.log(element);
 })
 
 // Metody mutujące tablicę (zmieniające jej składniki):

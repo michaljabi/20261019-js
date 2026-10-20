@@ -63,6 +63,35 @@ const shoppingCartGrossValue = grossValue + grossValue2;
 
 console.log(shoppingCartGrossValue);
 
+// Array daje nam możliwość utworzenia koszyka przechowującego elementy (kolekcję)
+const cartItems = [
+	makeNewCartItem('Laptop', 4500), 
+	makeNewCartItem('Smartfone', 2500),
+	makeNewCartItem('Smartfone 14', 2600),
+	makeNewCartItem('Smartfone 15', 2900),
+	makeNewCartItem('Smartfone 16', 2900),
+]
+
+console.log(cartItems.push(makeNewCartItem('toster', 200, 0.8)))
+
+console.log(cartItems.length)
+console.log(cartItems)
+console.log(cartItems[2])
+console.log(cartItems[2].price)
+console.log(cartItems[2].tax)
+
+console.log(cartItems[4])
+console.log(cartItems[493])
+
+// Jak odnieść się do ostaniego elementu ?
+console.log(cartItems[cartItems.length - 1])
+
+let totalGrossValue = 0;
+for(const items of cartItems) {
+	totalGrossValue += countItemGrossValue(items);
+	console.log(totalGrossValue);
+}
+console.log(totalGrossValue);
 
 
 // #3 Wykaż, że zainicjowanie dwóch nowych pustych obiektów po porównaniu === da nam wartość false.
