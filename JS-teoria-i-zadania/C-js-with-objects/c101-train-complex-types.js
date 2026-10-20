@@ -19,6 +19,13 @@ function makeNewCartItem(name = '', price = 10, tax = 0.23) {
 }
 
 function countItemGrossValue(item) {
+	// const parialSum = item.price + 98;
+	// ALE NIE:
+	// item.partialSum = 98; //  !! bo to mutuje obiekt (dopisze nowe pole do tego co "wchodzi" do funkcji)
+	// item.tax = 0.8 // tutaj z kolei zmieniamy "niespodzewanie" wartość 
+	// REGUŁA:
+	// jeśli pracujesz z obiektami wparametrach funkcji - to traktuj je TYLKO DO OCZYTU
+	// lub kopiuj (shallow lub, clone) jeśli koniecznie potrzebujesz obiektu
 	return item.price * (1 + item.tax)
 }
 
@@ -30,6 +37,7 @@ const shoppingCartItem = makeNewCartItem('Laptop', 4500);
 console.log(shoppingCartItem)
 // cena brutto
 const grossValue = countItemGrossValue(shoppingCartItem);
+console.log(shoppingCartItem)
 
 /* #2 Zadanie:
 Zdefiniuj i przypisz obiekt shoppingCartItem2 z polami:
