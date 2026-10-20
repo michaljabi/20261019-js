@@ -59,3 +59,54 @@ console.log(shoppingCartGrossValue);
 
 // #3 Wykaż, że zainicjowanie dwóch nowych pustych obiektów po porównaniu === da nam wartość false.
 // Wyjaśnij dlaczego tak się dzieje
+
+// Obiekt, 
+console.log({} === {});
+// to pod spodem to tak naprawdę:
+console.log(new Object() === new Object());
+
+const a = {};
+const b = a;
+
+console.log(a === b);
+
+console.log(makeNewCartItem())
+console.log(makeNewCartItem())
+
+console.log(makeNewCartItem() === makeNewCartItem());
+console.log([] === []);
+console.log(new Date() === new Date());
+
+// co je łączy ?
+console.log(null === null);
+console.log('' === '');
+console.log(1 === 1);
+// bo to TYPY PROSTE
+
+// NIESTETY UWAGA - JS wchodzi cały na biało ze swoimi dziwadłami
+console.log(false == 0)
+console.log('' == 0)
+// problem - uzywamy == zamiast === - NIE róbmy tego dla typów prostych!
+// zobacz ===
+console.log(false === 0)
+console.log('' === 0)
+// === oznacza - porównaj wartość i NIE ZRÓWNUJ TYPU ! (nie rzutuj)
+
+// console.log()
+
+
+// Przykład rzutowania
+const numberAsString = '987'
+
+const myNumber = Number(numberAsString); // można na : String(), Number(), BigInt(), Boolean() => bez słowa kluczowego "new".
+
+console.log(numberAsString)
+console.log(myNumber)
+
+// Niestety NaN jest typu number:
+console.log(typeof NaN);
+
+// Niestety 2, NaN nie jest stałą!!
+console.log(NaN === NaN);
+
+console.log(Number.isNaN(NaN));
