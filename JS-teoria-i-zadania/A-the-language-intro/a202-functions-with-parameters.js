@@ -29,7 +29,8 @@ function sumTwoNumbers(a, b) {
 	console.log(a);
 	console.log(b);
 	// zakres funkcji
-	if(typeof a !== 'number' || typeof b !== 'number') {
+	if(typeof a !== 'number' || typeof b !== 'number' || Number.isNaN(a) || Number.isNaN(b)) {
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
 		// zakres wewnętrzny
 		throw new Error('a and b must be a numbers !')
 		// return 'You must provide a number'
@@ -47,7 +48,7 @@ function sumTwoNumbers(a, b) {
 // Wywołanie:
 try {
 	// const result = sumTwoNumbers('x', '2');
-	const result = sumTwoNumbers(10, 20);
+	const result = sumTwoNumbers(NaN, NaN);
 	// #1 Zadanie:
 	// Pokaż wynik dodawania 10 + 20 na ekranie
 	console.log(result)
