@@ -29,11 +29,18 @@ Zdefiniuj i przypisz obiekt shoppingCartItem2 z polami:
 Pokaż w console.log sumy cen(price) i podatków(tax) obydwu produktów jako wartość koszyka
 */
 
+const shoppingCartItem2 = {
+	name: 'Smartfone',
+	price: 2500,
+	tax: 0.23
+}
 
+const grossValue2 = shoppingCartItem2.price + shoppingCartItem2.price * shoppingCartItem2.tax;
+console.log(grossValue2);
 
+const shoppingCartGrossValue = grossValue + grossValue2;
 
-
-
+console.log(shoppingCartGrossValue);
 
 
 
