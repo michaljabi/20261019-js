@@ -18,16 +18,18 @@ function makeNewCartItem(name = '', price = 10, tax = 0.23) {
 	}
 }
 
+function countItemGrossValue(item) {
+	return item.price * (1 + item.tax)
+}
+
 // Przykład utworzenia obiektu ze wszystkimi wartościami domyślnymi
 console.log(makeNewCartItem())
 
 
 const shoppingCartItem = makeNewCartItem('Laptop', 4500); 
-
 console.log(shoppingCartItem)
 // cena brutto
-const grossValue = shoppingCartItem.price + shoppingCartItem.price * shoppingCartItem.tax;
-console.log(grossValue);
+const grossValue = countItemGrossValue(shoppingCartItem);
 
 /* #2 Zadanie:
 Zdefiniuj i przypisz obiekt shoppingCartItem2 z polami:
@@ -46,17 +48,12 @@ Pokaż w console.log sumy cen(price) i podatków(tax) obydwu produktów jako war
 // 	tax: 0.23
 // }
 
+
 const shoppingCartItem2 = makeNewCartItem('Smartfone', 2500)
-
-const grossValue2 = shoppingCartItem2.price + shoppingCartItem2.price * shoppingCartItem2.tax;
-console.log(grossValue2);
-
+const grossValue2 = countItemGrossValue(shoppingCartItem2)
 const shoppingCartGrossValue = grossValue + grossValue2;
 
 console.log(shoppingCartGrossValue);
-
-
-
 
 
 
