@@ -7,11 +7,22 @@ Zdefiniuj i przypisz obiekt shoppingCartItem z polami:
 	Samodzielnie wymyśl ich wartości
 */
 
-const shoppingCartItem = {
-	name: 'Laptop',
-	price: 4500,
-	tax: 0.23
+// Factory function => funkcja której zadaniem jest tworzenie nowych
+function makeNewCartItem(name = '', price = 10, tax = 0.23) {
+	// UWAGA! return musi mieć "zaczęte" to co zwraca w tej samej linii co jest napisany
+	return {
+		name: name,
+		price, // wykorzystanie tzw. object property shorthand (lukier składniowy - tak to się nazywa w językach programowania)
+		// lukier składniowy -> uproszczony zapis, ułatwienie dla programisty (często wchodzi w nowej wersji języka)
+		tax: tax
+	}
 }
+
+// Przykład utworzenia obiektu ze wszystkimi wartościami domyślnymi
+console.log(makeNewCartItem())
+
+
+const shoppingCartItem = makeNewCartItem('Laptop', 4500); 
 
 console.log(shoppingCartItem)
 // cena brutto
@@ -29,11 +40,13 @@ Zdefiniuj i przypisz obiekt shoppingCartItem2 z polami:
 Pokaż w console.log sumy cen(price) i podatków(tax) obydwu produktów jako wartość koszyka
 */
 
-const shoppingCartItem2 = {
-	name: 'Smartfone',
-	price: 2500,
-	tax: 0.23
-}
+// const shoppingCartItem2 = {
+// 	name: 'Smartfone',
+// 	price: 2500,
+// 	tax: 0.23
+// }
+
+const shoppingCartItem2 = makeNewCartItem('Smartfone', 2500)
 
 const grossValue2 = shoppingCartItem2.price + shoppingCartItem2.price * shoppingCartItem2.tax;
 console.log(grossValue2);
