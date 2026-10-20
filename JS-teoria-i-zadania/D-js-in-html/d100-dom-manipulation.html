@@ -66,6 +66,10 @@
         if($desc !== null) { // można prościej (ale za chwilę)
            $desc.setAttribute('title', 'Tak to ja 😎')
         }
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+        $desc.innerHTML = "Hello <strong>World</strong>"
+        // $desc.textContent = "Hello <strong>World</strong>"
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 
         const $allDesc = document.querySelectorAll('.description');
         // console.log($allDesc)
