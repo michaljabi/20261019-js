@@ -14,7 +14,8 @@ console.log(myObject)
 
 // Prosty przykład obiektu:
 const user = {
-	name: 'Marek'
+	name: 'Marek',
+	lastName: 'Kowalski',
 };
 
 // użycie obiektu:
