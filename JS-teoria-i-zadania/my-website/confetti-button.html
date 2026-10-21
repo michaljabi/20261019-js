@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Utwórz button, dodaj @hiseb/confetti, uruchom confetti po kliknięciu w button -->
+    <div style="display: flex; justify-content: center; margin-top: 50px"><button id="fireConfetti">Fire!</button></div>
+    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.2.0/dist/confetti.min.js"></script>
+    <script>
+        console.log('?')
+
+        const btn = document.querySelector('#fireConfetti');
+
+        btn.addEventListener('click', (e) => {
+            confetti({
+                position: { x: e.clientX, y: e.clientY },
+                velocity: 100,
+                count: 1000
+            })
+        })
+    </script>
+</body>
+</html>
