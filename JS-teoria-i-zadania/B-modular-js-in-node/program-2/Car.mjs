@@ -1,4 +1,4 @@
-export class Car {
+class Car {
 
 	constructor (name = 'Audi', model = 'A8') {
 		this.name = name;
@@ -10,3 +10,8 @@ export class Car {
 	}
 }
 
+const MY_VALUE = 2000;
+
+
+// TODO: zaimportować przeglądarką:
+export { Car, MY_VALUE };
