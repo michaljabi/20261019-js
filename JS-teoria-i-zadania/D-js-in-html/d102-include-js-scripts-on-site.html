@@ -9,13 +9,16 @@
     <h1>Hello!</h1>
     <p></p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script>
+    <!-- <script src="lodash.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script> -->
+    <!-- ścieżka absolutna (+ do innego serwera - domeny)-->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.18.1/lodash.min.js"></script>
     <script>
-        // const _ = {}; pytanie: export wszystkiego vs ESM
-        const lastElement = _.last([1, 2, 233]);
-
-        document.querySelector('p').innerHTML = 'Last element in array is: <b>'+ lastElement + '</b>';
+        const lodash = _;
     </script>
+
+    <!-- ścieżka relatywna do tego pliku .html, u nas na serwerze-->
+    <script src="./my-script.js"></script>
 
     <!--
 
