@@ -33,7 +33,7 @@ console.log(shop);
 console.log(shop.fruits[2], shop.greetings());
 
 // #3 Zadanie:
-// utwórz 2 obiekt concurrentShop który będzie klonem poprzedniego (zadeklaruj z tymi samymi wartościami)
+// utwórz 2 obiekt concurrentShop, który będzie (nowym obiektem) bez referencji do poprzedniego obiektu i jego zawartości (ale zadeklaruj z tymi samymi wartościami)
 // dodatkowo będzie miał również metodę banner - która zwróci "here prices are the lowest!"
 const concurrentShop = {
 	...makeFruitShop(),
