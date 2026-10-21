@@ -1,8 +1,21 @@
-const fruits = ['cherry', 'apple', 'banana'];
-const name = 'Fruit shop'
+// const fruits = ['cherry', 'apple', 'banana'];
+// const name = 'Fruit shop'
 
-function greetings() {
-	return 'welcome!'
+// function greetings() {
+// 	return 'welcome!' + this.name
+// }
+
+function makeFruitShop(name = 'Fruit shop') {
+	const fruits = ['cherry', 'apple', 'banana'];
+
+	function greetings() {
+		return 'welcome!' + this.name
+	}
+	return {
+		name,
+		fruits,
+		greetings
+	}
 }
 
 /* #1 Zadanie:
@@ -10,11 +23,7 @@ function greetings() {
 	 który będzie posiadał pola: fruits name greetings
 	 mają one mieć te same wartości co rzeczy zadeklarowane powyżej
 */
-const shop = {
-	fruits,
-	name,
-	greetings
-}
+const shop = makeFruitShop();
 
 console.log(shop);
 
@@ -27,16 +36,28 @@ console.log(shop.fruits[2], shop.greetings());
 // utwórz 2 obiekt concurrentShop który będzie klonem poprzedniego (zadeklaruj z tymi samymi wartościami)
 // dodatkowo będzie miał również metodę banner - która zwróci "here prices are the lowest!"
 const concurrentShop = {
-	fruits,
-	name,
-	greetings,
+	...makeFruitShop(),
 	banner() { // Jeśli tutaj będzie `arrow` to UWAGA - nie zadziała this.
 		return this.name + " - here prices are the lowest!"; // + this.fruits.join('_?_')
 	}
 }
 
+// sposób 2 przygotowania nowego obiektu + metoda banner:
+const concurrentShop2 = makeFruitShop();
+concurrentShop2.banner = function() {
+	return this.name + " - here prices are the lowest!";
+}
+
 console.log(concurrentShop);
 console.log(concurrentShop.banner());
+
+
+console.log(shop.name);
+console.log(shop.greetings());
+console.log(concurrentShop.greetings());
+
+console.log(concurrentShop.fruits === shop.fruits)
+
 
 
 // #4 Zadnie:
