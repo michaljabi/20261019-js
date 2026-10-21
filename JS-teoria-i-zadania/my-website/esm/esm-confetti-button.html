@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confetti ESM</title>
+</head>
+<body>
+    <!-- Utwórz button, dodaj @hiseb/confetti, uruchom confetti po kliknięciu w button -->
+    <div style="display: flex; justify-content: center; margin-top: 50px"><button id="fireConfetti">Fire!</button></div>
+    <script type="module">
+        import confetti from 'https://esm.sh/@hiseb/confetti';
+        console.log('?')
+
+        const btn = document.querySelector('#fireConfetti');
+
+        btn.addEventListener('click', (e) => {
+            confetti({
+                position: { x: e.clientX, y: e.clientY },
+                velocity: 500,
+                count: 100
+            })
+        })
+    </script>
+</body>
+</html>
